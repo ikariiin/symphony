@@ -1,0 +1,45 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "ui:dev",
+      "type": "shell",
+      // `dev` keeps running in the background
+      // ideally you should also configure a `problemMatcher`
+      // see https://code.visualstudio.com/docs/editor/tasks#_can-a-background-task-be-used-as-a-prelaunchtask-in-launchjson
+      "isBackground": true,
+      // Problem matches for Next.js dev server
+      // "problemMatcher": {
+      //   "owner": "nextjs",
+      //   "fileLocation": ["relative", "${workspaceFolder}"],
+      //   "pattern": {
+      //     "regexp": "^\\s+(?:at\\s+[^(]+\\s+\\(([^)]+)\\)|at\\s+([^()\\s]+))$",
+      //     "file": 1,
+      //     "location": 2,
+      //     "message": 3
+      //   },
+      //   "background": {
+      //     "activeOnStart": true,
+      //     "beginsPattern": {
+      //       "regexp": "^ready\\s+on\\s+(?:https?://)?([\\w\\d.-]+):?(\\d+)?$",
+      //     },
+      //     "endsPattern": {
+      //       "regexp": "^\\s+at\\s+([^()\\s]+)\\s+\\(([^)]+)\\)$"
+      //     }
+      //   }
+      // },
+      // change this to your `beforeDevCommand`:
+      "command": "yarn",
+      "args": ["dev"]
+    },
+    {
+      "label": "ui:build",
+      "type": "shell",
+      // change this to your `beforeBuildCommand`:
+      "command": "yarn",
+      "args": ["build"]
+    }
+  ]
+}
